@@ -2,6 +2,7 @@
 
 for year in 1997 1998 1999 2000
 do
-    echo Year: $year
+echo Year: $year
+Rscript plot_weight_by_species.R $year
 done
 
