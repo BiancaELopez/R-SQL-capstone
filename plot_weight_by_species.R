@@ -34,7 +34,8 @@ result <- dbGetQuery(conn,query_string)
 head(result)
 
 # plot the data and save to a png file
-ggplot(data = result, aes(x = weight, y = species_id))+
-  geom_violin()
+ggplot(data = result, aes(x = species_id, y = weight))+
+  geom_jitter(alpha = 0.3, color='tomato') + # adds the data
+  geom_boxplot(alpha = 0)
 outputfilename <- paste("weight by species", year, ".png")
 ggsave(outputfilename)
